@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<style type="text/css">
+		body
+		{
+			background-image: url("pics/image1.jpg");
+			background-size: cover;
+		}
+
+		#loginform
+		{
+			background: rgba(0, 0, 0, 0.5);
+			width: 20%;
+			padding: 10px;
+			margin-top: 10%;
+			margin-left: 35%;
+		}
+
+		.inputclass
+		{
+			padding: 7px;
+			border: none;
+			width: 92%;
+		}
+
+		.buttonclass
+		{
+			background-color: limegreen;
+			color: white;
+			border: none;
+			width: 100%;
+			padding: 7px 30px;
+		}
+
+		.buttonclass:hover
+		{
+			background-color: gold;
+			cursor: pointer;
+			color: #000123;
+		}
+	</style>
+
+
+</head>
+<body>
+   
+   <div id="loginform">
+   	 <form name="f1" action="login">
+   	 	<table cellpadding="5" align="center">
+   	 		<tr>
+   	 			<th>
+   	 				<h2 style="color: gold;">PB Matics CRM</h2>
+   	 			</th>
+   	 		</tr>
+
+   	 		<tr>
+   	 			<td>
+   	 				<input type="text" name="uname" placeholder="Username" class="inputclass">
+   	 			</td>
+   	 		</tr>
+
+   	 		<tr>
+   	 			<td>
+   	 				<input type="text" name="pass" placeholder="Password" class="inputclass">
+   	 			</td>
+   	 		</tr>
+
+   	 		<tr>
+   	 			<td>
+   	 				<input type="button" value="Login" class="buttonclass">
+   	 			</td>
+   	 		</tr>
+
+   	 		<tr>
+   	 			<td>
+   	 				<input type="reset" value="Reset" class="buttonclass">
+   	 			</td>
+   	 		</tr>
+   	 	</table>
+   	 </form>
+   </div>
+
+</body>
+</html>

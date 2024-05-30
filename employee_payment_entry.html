@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee Payment Entry</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+</script>
+
+<style type="text/css">
+	.jumbotron
+	{
+		padding: 10px;
+		font-family: sans-serif;
+		background-color: #ED3196;
+	}
+	p 
+	{
+		color: white;
+		font-weight: bolder;
+		margin-top: -15px;
+		font-style: italic;
+	}
+	.well
+	{
+		font-size: 20px;
+		background-color: gold;
+	}
+	.well:hover
+	{
+		background-color: #ED3196;
+		color: white;
+		cursor: pointer;
+	}
+	a 
+	{
+		text-decoration: none;
+		color: #000123;
+	}
+	a:hover
+	{
+		text-decoration: none;
+        color: white;
+	}
+	.formdiv
+	{
+		width: 40%;
+		margin-left: 30%;
+		background: linear-gradient(to right bottom,deeppink,purple);
+		padding: 10px;
+		color: white;
+	}
+	.btn
+	{
+		background-color: gold;
+		border: none;
+	}
+</style>
+<script type="text/javascript">
+	function validation()
+	{
+		// validation first name
+		if(document.f1.fname.value=="")
+		{
+			alert("Please enter the First Name ");
+			document.f1.fname.focus();
+			return false;
+		}
+
+		var data=/^[A-Za-z]+$/;
+		if(!document.f1.fname.value.match(data))
+		{
+			alert("Please enter the valid First Name");
+			document.f1.fname.focus();
+			return false;
+		}
+
+
+		// validation last name
+		if(document.f1.lname.value=="")
+		{
+			alert("Please enter the Last Name");
+			document.f1.lname.focus();
+			return false;
+		}
+		if(!document.f1.lname.value.match(data))
+		{
+			alert("Please enter valid Last Name");
+			document.f1.lname.focus();
+			return false;
+		}
+
+
+		// validation for Payment Amount
+		if(document.f1.pay_amt.value=="")
+		{
+			alert("Please enter the Payment Amount");
+			document.f1.pay_amt.focus();
+			return false;
+		}
+      
+                    
+                if(document.f1.job.value=="")
+                {
+                  alert("Please enter the Job");
+                  document.f1.job.focus();
+                  return false;
+                }
+                
+                 if(document.f1.payment_mode.value=="")
+                {
+                  alert("Please select the Payment Mode");
+                  document.f1.payment_mode.focus();
+                  return false;
+                }
+                
+                   if(document.f1.incentive_amt.value=="")
+                {
+                  alert("Please select the Incentive Amount");
+                  document.f1.incentive_amt.focus();
+                  return false;
+                }
+		
+	}// end of validation
+
+	function showDate()
+	{
+		var d=new Date();
+		var dd=d.getDate();
+
+		var month_list=["JAN","FEB","MAR","APR","MAY","JUNE","JULY","AUG","SEPT","OCT","NOV","DEC"];
+
+		var mm=month_list[d.getMonth()];
+
+		var yy=d.getFullYear();
+
+		var cdate=dd+"/"+mm+"/"+yy;
+
+		document.f1.pay_date.value=cdate;
+                
+                var h=d.getHours();
+                var m=d.getMinutes();
+                var ctime=h+":"+m;
+                
+                document.f1.pay_time.value=ctime;
+	}
+        function payment()
+        {
+            var pay_amt=document.f1.pay_amt.value;
+            var incentive_amt=document.f1.incentive_amt.value;
+            
+            var final_pay=(pay_amt*incentive_amt)+parseInt(pay_amt);
+            
+            document.f1.final_pay_amt.value=final_pay;
+        }
+</script>
+</head>
+<body onload="showDate()">
+
+   <div class="jumbotron">
+   	  <h2 style="color: gold;">PB Matics CRM</h2>
+   	  <p>Digital Software Solution</p>
+   </div>
+
+   <button class="btn btn-primary">
+   	<a href="logout.html">Log Out</a>
+   </button>
+
+   <div class="form formdiv">
+       <form name="f1" method="POST" action="employee_payment_entry.jsp">
+   	 	<h3 class="text-center">Employee Payment Entry</h3>
+   	 	<div class="form-group">
+   	 		
+   	 		<input type="text" name="pay_date" readonly class="form-control">
+   	 	</div>
+                <div class="form-group">
+   	 		
+   	 		<input type="text" name="pay_time" readonly class="form-control">
+   	 	</div>
+   	 	<div class="form-group">
+   	 		<input type="text" name="fname" placeholder="First Name" class="form-control">
+   	 	</div>
+
+   	 	<div class="form-group">
+   	 		<input type="text" name="lname" placeholder="Last Name" class="form-control">
+   	 	</div>
+
+   	 	<div class="form-group">
+   	 		<input type="number" name="pay_amt" placeholder="Payment Amount" class="form-control">
+   	 	</div>
+
+   	 	<div class="form-group">
+   	 		<select name="job" class="form-control">
+   	 			<option value="">--Select Job--</option>
+   	 			<option value="Manager">Manager</option>
+   	 			<option value="Developer">Developer</option>
+   	 			<option value="Tester">Tester</option>
+                                <option value="Analyst">Analyst</option>
+   	 		</select>
+   	 	</div>
+
+   	 	<div class="form-group">
+   	 		<label>Payment Mode</label>
+   	 		<div class="radio-inline">
+   	 			<input type="radio" name="payment_mode" value="Netbanking">Netbanking
+   	 		</div>
+   	 		<div class="radio-inline">
+   	 			<input type="radio" name="payment_mode" value="UPI">UPI
+   	 		</div>
+   	 		<div class="radio-inline">
+   	 			<input type="radio" name="payment_mode" value="By Cheque">By Cheque
+   	 		</div>
+   	 	</div>
+                
+                <div class="form-group">
+   	 		<label>Incentive Amount</label>
+   	 		<div class="radio-inline">
+   	 			<input type="radio" name="incentive_amt" value="0.02" onclick="payment()">2%
+   	 		</div>
+   	 		<div class="radio-inline">
+   	 			<input type="radio" name="incentive_amt" value="0.05" onclick="payment()">5%
+   	 		</div>
+   	 		<div class="radio-inline">
+   	 			<input type="radio" name="incentive_amt" value="0.10" onclick="payment()">10%
+   	 		</div>
+                        <div class="radio-inline">
+                            <input type="radio" name="incentive_amt" value="0" onclick="payment()">No Incentive
+   	 		</div>
+   	 	</div>
+                <div class="form-group">
+   	 		<input type="number" name="final_pay_amt" placeholder="Final Payment Amount" class="form-control">
+   	 	</div>
+
+   	 	<div class="form-group text-center">
+   	 		<button class="btn btn-info">Go To dashboard</button>
+
+   	 		<button class="btn btn-info" type="submit" onclick="return validation()">Submit Employee Payment</button>
+   	 		<button class="btn btn-info">Reset</button>
+   	 	</div>
+   	 </form>
+   </div>
+
+</body>
+</html>
