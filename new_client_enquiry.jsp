@@ -9,6 +9,7 @@
    String client_info=request.getParameter("client_info");
    String client_suggested_info=request.getParameter("client_suggested_info");
    String status=request.getParameter("status");
+   int uid=(Integer)session.getAttribute("session_uid");
 
    try{
         Class.forName("com.mysql.jdbc.Driver");           
@@ -16,7 +17,7 @@
       
       Statement st=con.createStatement();
       
-      int i=st.executeUpdate("insert into client_enquiry(CLIENT_ENTRY_DATE,FNAME,LNAME,PHONENO,EMAIL,PROFESSION,CLIENT_INFO,CLIENT_SUGG_PROF,SELECT_STATUS)values('"+enq_date+"','"+fname+"','"+lname+"','"+phoneno+"','"+email+"','"+profession+"','"+client_info+"','"+client_suggested_info+"','"+status+"')");
+      int i=st.executeUpdate("insert into client_enquiry(uid,CLIENT_ENTRY_DATE,FNAME,LNAME,PHONENO,EMAIL,PROFESSION,CLIENT_INFO,CLIENT_SUGG_PROF,SELECT_STATUS)values('"+ uid +"','"+enq_date+"','"+fname+"','"+lname+"','"+phoneno+"','"+email+"','"+profession+"','"+client_info+"','"+client_suggested_info+"','"+status+"')");
       
      out.println("<br><br><br>");
      out.println("<center>");

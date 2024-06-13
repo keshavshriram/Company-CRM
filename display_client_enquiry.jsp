@@ -37,7 +37,8 @@
         <table class="table table-bordered">
             <tr bgcolor="gold">
                         <th>SR.NO</th>
-                        <th>Id</th>
+                        <th>Enq Id</th>
+                        <th>User Id</th>
   			<th>Date</th>
   			<th>First Name</th>
   			<th>Last Name</th>
@@ -51,13 +52,14 @@
             </tr>
             
             <%
+                int uid=(Integer)session.getAttribute("session_uid");
                 try{
                     Class.forName("com.mysql.jdbc.Driver");           
                     Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/pbmatics_db","root","");
                  
                     Statement st=con.createStatement();
                     
-                    String sql="select * from client_enquiry order by client_id desc";
+                    String sql="select * from client_enquiry where uid="+uid;
                     ResultSet rs=st.executeQuery(sql);
                  
                     int x=101;
@@ -67,6 +69,7 @@
                         <tr>
                           <td><%=x%></td>  
                           <td><%=rs.getInt("CLIENT_ID")%></td>
+                          <td><%=rs.getInt("uid")%></td>
                           <td><%=rs.getString("CLIENT_ENTRY_DATE")%></td>
                           <td><%=rs.getString("FNAME")%></td>
                           <td><%=rs.getString("LNAME")%></td>
@@ -100,7 +103,7 @@
                 }
                 catch(Exception e)
                             {
-                            System.out.println(e);
+                                out.println(e);
                             }
                     %>
         </table>

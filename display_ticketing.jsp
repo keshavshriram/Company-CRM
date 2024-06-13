@@ -38,6 +38,7 @@
             <tr bgcolor="gold">
                 <th>SR.NO</th>
                 <th>Ticketing Id</th>
+                <th>User Id</th>
                 <th>Entry Date</th>
                 <th>Department Name</th>
                 <th>Client Name</th>
@@ -49,12 +50,13 @@
             </tr>
             
             <%
+                int uid =(Integer)session.getAttribute("session_uid");
                 try{
                     Class.forName("com.mysql.jdbc.Driver");           
                     Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/pbmatics_db","root","");
       
                     Statement st=con.createStatement();
-                    String sql="select * from add_ticketing order by ticketing_id";
+                    String sql="select * from add_ticketing where uid="+uid;
                     ResultSet rs=st.executeQuery(sql);
                     int x=101;
                     while(rs.next())
@@ -64,6 +66,7 @@
                       <tr>
                           <td><%=x%></td>
                           <td><%=rs.getInt("TICKETING_ID")%></td>
+                          <td><%=rs.getString("uid")%></td>
                           <td><%=rs.getString("ENTRY_DATE")%></td>
                           <td><%=rs.getString("DNAME")%></td>
                           <td><%=rs.getString("CLIENT_NAME")%></td>

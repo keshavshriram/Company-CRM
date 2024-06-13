@@ -19,11 +19,7 @@
     
     <body>
         
-       <div class="jumbotron">
-  	  <h2 style="color: gold;">PB Matics CRM</h2>
-  	  <p>Digital Software Solution</p>
-       </div>
-        
+        <%@include file="header.html"%>
         <div class="row">
             <div class="col-sm-4">
         <a href="client_payment_entry.html">

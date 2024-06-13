@@ -14,6 +14,7 @@
 			font-family: sans-serif;
 			background-color: #ED3196;
 		}
+		
 		p 
 		{
 			color: white;
@@ -21,6 +22,7 @@
 			margin-top: -15px;
 			font-style: italic;
 		}
+                
 		.well
 		{
 			font-size: 20px;
@@ -49,48 +51,47 @@
 	</style>
 </head>
 <body>
- 
-   <div class="jumbotron">
-   	  <h2 style="color: gold;">PB Matics CRM</h2>
-   	  <p>Digital Software Solution</p>
-   </div>
+    
+    
+    <%@ include file="brand_and_user_name.jsp"%>
+   
 
    <button class="btn btn-primary">
-   	   <a href="logout.html">Log Out</a>
+   	   <a href="logout.jsp">Log Out</a>
    </button>
 
    <div class="container-fluid text-center">
-   	     <h3>Employee Dashboard</h3>
+   	     <h3>Admin Department</h3>
 
    	  <div class="row">
    	  	 <div class="col-sm-3">
-   	  	 	<a href="new_client_enquiry.html">
+   	  	 	<a href="create_user.html">
    	  	 	<div class="well">
-   	  	 		New Client Enquiry
+   	  	 		Create New User
    	  	 	</div>
    	  	 	</a>
    	  	 </div>
 
    	  	 <div class="col-sm-3">
-   	  	 	<a href="display_client_enquiry.jsp">
+   	  	 	<a href="display_user.jsp">
    	  	 	<div class="well">
-   	  	 			Display All Client Enquiry
+   	  	 			Display User
    	  	 	</div>
    	  	    </a>
    	  	 </div>
 
    	  	 <div class="col-sm-3">
-   	  	 	<a href="client_followup.jsp">
+   	  	 	<a href="display_for_update.jsp">
    	  	 	<div class="well">
-   	  	 		Display Client Follow Up
+   	  	 		Update User
    	  	 	</div>
-   	  	    </a>
+   	  	        </a>
    	  	 </div>
 
    	  	 <div class="col-sm-3">
-   	  	 	<a href="clientlead.jsp">
+   	  	 	<a href="Display_for_remove.jsp">
    	  	 		<div class="well">
-   	  	 			Display Client Lead
+   	  	 			Remove User
    	  	 		</div>
    	  	 	</a>
    	  	 </div>
@@ -99,88 +100,17 @@
 
    	   <div class="row">
    	  	 <div class="col-sm-3">
-   	  	 	<a href="client_registration.html">
+   	  	 	<a href="petty_cash.html">
    	  	 	<div class="well">
-   	  	 		Client Registration Entry
+   	  	 		Petty Cash Entry
    	  	 	</div>
    	  	 	</a>
    	  	 </div>
 
    	  	 <div class="col-sm-3">
-   	  	 	<a href="display_registered_client.jsp">
+   	  	 	<a href="display_petty_cash.jsp">
    	  	 	<div class="well">
-   	  	 			Registered Client
-   	  	 	</div>
-   	  	    </a>
-   	  	 </div>
-
-   	  	 <div class="col-sm-3">
-   	  	 	<a href="client_payment_entry.html">
-   	  	 	<div class="well">
-   	  	 		Client Payment Entry
-   	  	 	</div>
-   	  	    </a>
-   	  	 </div>
-
-   	  	 <div class="col-sm-3">
-   	  	 	<a href="display_client_payment.jsp">
-   	  	 		<div class="well">
-   	  	 			Display Client Payment
-   	  	 		</div>
-   	  	 	</a>
-   	  	 </div>
-
-   	  </div> <!-- end of row-2 --> 
-
-          <!-- 3rd row -->
-           <div class="row">
-   	  	 <div class="col-sm-3">
-   	  	 	<a href="vendor_payment_entry.html">
-   	  	 	<div class="well">
-   	  	 		Vendor Payment Entry
-   	  	 	</div>
-   	  	 	</a>
-   	  	 </div>
-
-   	  	 <div class="col-sm-3">
-   	  	 	<a href="display_vendor_payment.jsp">
-   	  	 	<div class="well">
-   	                         Display Vendor Payment
-   	  	 	</div>
-   	  	    </a>
-   	  	 </div>
-
-   	  	 <div class="col-sm-3">
-   	  	 	<a href="employee_payment_entry.html">
-   	  	 	<div class="well">
-   	  	 		Employee Payment Entry
-   	  	 	</div>
-   	  	    </a>
-   	  	 </div>
-
-   	  	 <div class="col-sm-3">
-   	  	 	<a href="display_emppayment_entry.jsp">
-   	  	 		<div class="well">
-   	  	 			Display Employee Payment
-   	  	 		</div>
-   	  	 	</a>
-   	  	 </div>
-
-   	  </div> <!-- end of row-4 --> 
-
-             <div class="row">
-   	  	 <div class="col-sm-3">
-   	  	 	<a href="day_plan_entry.html">
-   	  	 	<div class="well">
-   	  	 		Day Plan Entry
-   	  	 	</div>
-   	  	 	</a>
-   	  	 </div>
-
-   	  	 <div class="col-sm-3">
-   	  	 	<a href="display_plan_entry.jsp">
-   	  	 	<div class="well">
-   	  	 	         Display Day Plan
+   	  	 			Display Petty Cash
    	  	 	</div>
    	  	    </a>
    	  	 </div>
@@ -188,7 +118,7 @@
    	  	 <div class="col-sm-3">
    	  	 	<a href="add_ticketing.html">
    	  	 	<div class="well">
-   	  	 		Ticketing Entry
+   	  	 		Add Ticketing
    	  	 	</div>
    	  	    </a>
    	  	 </div>
@@ -201,7 +131,45 @@
    	  	 	</a>
    	  	 </div>
 
-   	  </div> <!-- end of row-4 --> 
+   	  </div> <!-- end of row-2 --> 
+
+
+       <div class="row">
+   	  	 <div class="col-sm-3">
+   	  	 	<a href="display_client_payment.jsp">
+   	  	 	<div class="well">
+   	  	 		Display Client Payment
+   	  	 	</div>
+   	  	 	</a>
+   	  	 </div>
+
+   	  	 <div class="col-sm-3">
+   	  	 	<a href="display_vendor_payment.jsp">
+   	  	 	<div class="well">
+   	  	 			Display Vendor Payment
+   	  	 	</div>
+   	  	    </a>
+   	  	 </div>
+
+   	  	 <div class="col-sm-3">
+   	  	 	<a href="display_emppayment_entry.jsp">
+   	  	 	<div class="well">
+   	  	 		Display Employee Payment
+   	  	 	</div>
+   	  	    </a>
+   	  	 </div>
+
+   	  	 <div class="col-sm-3">
+   	  	 	<a href="ledgerbook.jsp">
+   	  	 		<div class="well">
+   	  	 			Display Ledger Book
+   	  	 		</div>
+   	  	 	</a>
+   	  	 </div>
+
+   	  </div> <!-- end of row-3 --> 
+
+
 
    </div><!-- end of container div -->
 

@@ -19,7 +19,7 @@
     
     <body>
         
-       <%@include file="header.html"%>
+       <%@include file="brand_and_user_name.jsp"%>
         
         <div class="row">
             <div class="col-sm-4">

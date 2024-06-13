@@ -1,16 +1,91 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<head>
+	<title>Login</title>
+
+	<style type="text/css">
+		body
+		{
+			background-image: url("pics/image1.jpg");
+			background-size: cover;
+		}
+
+		#loginform
+		{
+			background: rgba(0, 0, 0, 0.5);
+			width: 20%;
+			padding: 20px 35px;
+			margin-top: 10%;
+			margin-left: 35%;
+                        border-radius: 20px;
+		}
+
+		.inputclass
+		{
+			padding: 20px;
+			border: none;
+			width: 92%;
+                        font-size: 1.1rem;
+                        border-radius: 10px;
+		}
+
+		.buttonclass
+		{
+			background-color: limegreen;
+			color: white;
+			border: none;
+			width: 109%;
+			padding: 10px 30px;
+                        border-radius: 10px;
+		}
+
+		.buttonclass:hover
+		{
+			background-color: gold;
+			cursor: pointer;
+			color: #000123;
+		}
+	</style>
+
+
+</head>
+<body>
+   
+   <div id="loginform">
+       <form name="f1" method="post" action="login.jsp">
+   	 	<table cellpadding="5" align="center">
+   	 		<tr>
+   	 			<th>
+   	 				<h2 style="color: gold; font-size: 2rem">PB Matics CRM</h2>
+   	 			</th>
+   	 		</tr>
+
+   	 		<tr>
+   	 			<td>
+                                    <input type="text" name="uname" placeholder="Username" class="inputclass" required>
+   	 			</td>
+   	 		</tr>
+
+   	 		<tr>
+   	 			<td>
+                                    <input type="text" name="pass" placeholder="Password" class="inputclass" required>
+   	 			</td>
+   	 		</tr>
+
+   	 		<tr>
+   	 			<td>
+   	 				<input type="submit" value="Login" class="buttonclass">
+   	 			</td>
+   	 		</tr>
+
+   	 		<tr>
+   	 			<td>
+   	 				<input type="reset" value="Reset" class="buttonclass">
+   	 			</td>
+   	 		</tr>
+   	 	</table>
+   	 </form>
+   </div>
+
+</body>
 </html>
